@@ -6,15 +6,15 @@
     <title>Divert Options</title>
     <style>
         :root {
-            --primary-color: #3498db; /* Brighter Blue */
+            --primary-color: #3498db;
             --primary-hover: #2980b9;
-            --background-color: #ecf0f1; /* Light Grey */
+            --background-color: #ecf0f1;
             --container-bg: #ffffff;
-            --text-color: #34495e; /* Dark Blue/Grey */
-            --label-color: #7f8c8d; /* Medium Grey */
-            --border-color: #bdc3c7; /* Light Grey Border */
-            --success-color: #2ecc71; /* Green */
-            --error-color: #e74c3c; /* Red */
+            --text-color: #34495e;
+            --label-color: #7f8c8d;
+            --border-color: #bdc3c7;
+            --success-color: #2ecc71;
+            --error-color: #e74c3c;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -26,9 +26,10 @@
             padding: 30px;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to top */
+            align-items: flex-start;
             min-height: 100vh;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         .main-container {
@@ -37,7 +38,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
             box-sizing: border-box;
         }
 
@@ -47,7 +48,7 @@
             margin-top: 0;
             margin-bottom: 35px;
             font-weight: 600;
-            font-size: 2em;
+            font-size: 2.2em;
         }
 
         .section {
@@ -59,18 +60,18 @@
             margin-bottom: 10px;
             font-weight: 600;
             color: var(--label-color);
-            font-size: 0.95em;
+            font-size: 1.05em;
         }
 
         textarea {
             width: 100%;
             box-sizing: border-box;
-            height: 180px;
-            padding: 12px 15px;
+            height: 200px;
+            padding: 14px 16px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            font-size: 0.9em;
-            line-height: 1.5;
+            font-size: 1em;
+            line-height: 1.6;
             resize: vertical;
             background-color: #f8f9f9;
             color: var(--text-color);
@@ -80,32 +81,32 @@
         textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
         }
 
         .instructions {
-            font-size: 0.85em;
+            font-size: 0.95em;
             color: var(--label-color);
             margin-top: -5px;
             margin-bottom: 15px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         .instructions code {
             background-color: #e8e8e8;
-            padding: 2px 5px;
+            padding: 3px 6px;
             border-radius: 4px;
-            font-size: 0.95em;
+            font-size: 0.98em;
         }
 
         button {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             background: linear-gradient(to right, var(--primary-color), #2c81ba);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.1em;
+            font-size: 1.15em;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.1s ease;
@@ -125,7 +126,7 @@
             text-align: center;
             font-weight: 600;
             height: 22px;
-            font-size: 0.9em;
+            font-size: 1em;
             transition: opacity 0.3s ease;
         }
          #status.success { color: var(--success-color); }
