@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divert Options</title>
+    <style>
+        :root {
+            --primary-color: #3498db; /* Brighter Blue */
+            --primary-hover: #2980b9;
+            --background-color: #ecf0f1; /* Light Grey */
+            --container-bg: #ffffff;
+            --text-color: #34495e; /* Dark Blue/Grey */
+            --label-color: #7f8c8d; /* Medium Grey */
+            --border-color: #bdc3c7; /* Light Grey Border */
+            --success-color: #2ecc71; /* Green */
+            --error-color: #e74c3c; /* Red */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            background-color: var(--container-bg);
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--label-color);
+            font-size: 0.95em;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            height: 180px;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            resize: vertical;
+            background-color: #f8f9f9;
+            color: var(--text-color);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .instructions {
+            font-size: 0.85em;
+            color: var(--label-color);
+            margin-top: -5px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .instructions code {
+            background-color: #e8e8e8;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, var(--primary-color), #2c81ba);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, var(--primary-hover), #2573a7);
+        }
+         button:active {
+             transform: translateY(1px);
+             box-shadow: none;
+         }
+
+        #status {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            height: 22px;
+            font-size: 0.9em;
+            transition: opacity 0.3s ease;
+        }
+         #status.success { color: var(--success-color); }
+         #status.error { color: var(--error-color); }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Divert Configuration</h1>
+
+        <div class="section">
+            <label for="bannedDomains">Blocked Domains</label>
+            <p class="instructions">Enter domains you want to block, one per line (e.g., <code>facebook.com</code>). Subdomains are blocked automatically.</p>
+            <textarea id="bannedDomains" placeholder="e.g., youtube.com
+reddit.com
+twitter.com"></textarea>
+        </div>
+
+        <div class="section">
+            <label for="productiveDomains">Productive Alternatives</label>
+            <p class="instructions">Enter domains to suggest when a site is blocked, one per line (e.g., <code>github.com</code>).</p>
+            <textarea id="productiveDomains" placeholder="e.g., news.ycombinator.com
+wikipedia.org
+stackoverflow.com"></textarea>
+        </div>
+
+        <button id="saveButton">Save Settings</button>
+        <div id="status"></div>
+    </div>
+
+    <script src="options.js" defer></script>
+</body>
+</html>

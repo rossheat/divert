@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diverted</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #5cb85c; /* Green for links */
+            --secondary-hover: #4cae4c;
+            --background-color: #f7f9fc; /* Very light blue/grey */
+            --container-bg: #ffffff;
+            --text-color: #34495e;
+            --heading-color: #2c3e50; /* Darker heading */
+            --link-color: #3498db;
+            --link-hover: #2980b9;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            max-width: 550px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: var(--heading-color);
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--text-color);
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        #productiveList {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0; /* Added bottom margin */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center links */
+            gap: 15px; /* Space between links */
+        }
+
+        #productiveList li {
+            width: 100%;
+            max-width: 300px; /* Max width for links */
+        }
+
+        #productiveList a {
+            display: block; /* Make link fill list item */
+            padding: 13px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #productiveList a:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-message {
+            color: #7f8c8d; /* Medium Grey */
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .options-link-container {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+         .options-link-container a {
+             color: var(--link-color);
+             text-decoration: none;
+             font-weight: 500;
+         }
+         .options-link-container a:hover {
+             color: var(--link-hover);
+             text-decoration: underline;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Site Blocked</h1>
+        <h2>This page is on your block list. Why not visit one of these productive sites instead?</h2>
+
+        <ul id="productiveList">
+            <li class="status-message" style="display: none;">
+                Loading suggestions...
+            </li>
+        </ul>
+
+        <div class="options-link-container">
+            Need to adjust your lists?
+            <a href="#" id="optionsLink">Go to Divert Options</a>.
+        </div>
+    </div>
+
+    <script src="divert.js" defer></script>
+</body>
+</html>
